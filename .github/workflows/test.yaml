@@ -13,8 +13,6 @@ jobs:
             deps: make ./include/unicorn/unicorn.h ./lib/libunicorn.a
           - os: macos-14
             deps: brew install 'unicorn'
-          - os: ubuntu-latest
-            deps: sudo apt-get update && sudo apt-get install -y 'libcurl4-openssl-dev' 'libsasl2-dev' && make ./include/unicorn/unicorn.h ./lib/libunicorn.a
     steps:
       - uses: actions/checkout@v4
       - run: ${{ matrix.deps }}
